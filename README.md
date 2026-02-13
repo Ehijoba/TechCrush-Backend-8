@@ -32,7 +32,7 @@ npm start
 
 Core & Management: Simeon Alende (Lead), Emmanuel
 Data Engineering: Sodeeq, Micheal, Babatunde
-Backend Logic: Sampson, Kene, Smart
+Backend Logic: Sampson, Kenean, Smart
 Frontend UI: Olaoluwaseyi, Niamandy, Praise, Sadeleke
 QA & Analytics: Hamidu, Temitayo
 
