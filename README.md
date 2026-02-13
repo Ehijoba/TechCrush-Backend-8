@@ -12,16 +12,15 @@ A high-performance, file-based URL shortener engineered by Group 15 of TechCrush
 ##  Installation & Setup
 
 **Step 1: Clone the repository**
-```bash
+
 git clone [https://github.com/Ehijoba/url-shortener-task15.git](https://github.com/Ehijoba/url-shortener-task15.git)
 cd url-shortener-task15
 Step 2: Install core dependencies
 
-Bash
 npm install
 Step 3: Boot the server
 
-Bash
+
 npm start
  API Endpoints
 GET / : Renders the primary URL submission form.
