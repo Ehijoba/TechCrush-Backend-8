@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+module.exports = { getAllUrls, findUrlById, saveUrl };
+
 // 1. Define the path to the database ONCE
 const filePath = path.join(__dirname, '../urls.json');
 
@@ -39,4 +41,26 @@ const findUrlById = (id) => {
     }
 };
 
-module.exports = { getAllUrls, findUrlById };
+const saveUrl = (originalUrl, shortId) => {
+    try {
+        const urls = getAllUrls(); // Reuse the read function!
+        
+        const newUrl = {
+            id: shortId,      // The short code (e.g., 'abc12')
+            originalUrl: originalUrl,
+            createdAt: new Date().toISOString(),
+            clicks: 0
+        };
+
+        urls.push(newUrl);
+        
+        // Write back to file
+        fs.writeFileSync(filePath, JSON.stringify(urls, null, 2));
+        return newUrl;
+    } catch (error) {
+        console.error("Error saving URL:", error);
+        throw error;
+    }
+};
+
+module.exports = { getAllUrls, findUrlById, saveUrl };
