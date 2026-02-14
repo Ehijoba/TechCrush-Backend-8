@@ -21,8 +21,6 @@ function getAllUrls() {
     }
 }
 
-// 3. YOUR Function (Simplified!)
-// We can just reuse getAllUrls() so we don't have to write the read logic again!
 const findUrlById = (id) => {
     try {
         const urls = getAllUrls(); // Reuse the helper above!
@@ -41,5 +39,4 @@ const findUrlById = (id) => {
     }
 };
 
-// 4. Export BOTH functions
 module.exports = { getAllUrls, findUrlById };
