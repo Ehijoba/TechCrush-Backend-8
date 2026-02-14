@@ -1,5 +1,6 @@
-const { saveUrl } = require('../models/urlModels'); 
 const { isValidUrl } = require('../utils/validator');
+const { saveUrl } = require('../models/urlModels'); 
+
 
 const shortenUrl = (req, res) => {
     const { originalUrl } = req.body;
