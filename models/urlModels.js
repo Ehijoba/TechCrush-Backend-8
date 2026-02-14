@@ -1,12 +1,8 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-import { fileURLToPath } from 'url';
-
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+console.log(__dirname);
+console.log(__filename);
 // Path to urls.json
 const filePath = path.join(__dirname, '../urls.json');
 

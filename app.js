@@ -1,5 +1,5 @@
-import express from 'express';
-import { findUrl } from './models/urlModels.js'; 
+const express = require('express');
+const { findUrl } = require('./models/urlModels');
 
 const app = express();
 app.use(express.json());
