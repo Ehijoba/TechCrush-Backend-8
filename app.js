@@ -1,21 +1,21 @@
-const express = require('express');
-const app = express();
-const PORT = 3000;
+import express from 'express';
+import { findUrl } from './models/urlModels.js'; 
 
-// Middleware we wanna use to parse JSON and URL-encoded data
+const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
+// Form submission endpoint
+app.post('/shorten', (req, res) => {
+  const { longUrl } = req.body;
 
-// A simple test route to check if it's working
-app.get('/', (req, res) => {
-    res.send("Welcome to Group 15 URL Shortener API!");
+  // Generate a short code
+  const code = Math.random().toString(36).substring(2, 8);
+
+  // Step 5: use findUrl() to save new mapping
+  const saved = findUrl({ code, longUrl });
+
+  res.send(`Short URL code: ${saved.code}`);
 });
 
-// Start up the server {pardon my console.log}
-app.listen(PORT, () => {
-    console.log(`Server is running live on http://localhost:${PORT}`);
-});
+app.listen(3000, () => console.log('Server running at http://localhost:3000'));a
