@@ -1,12 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(__dirname);
-console.log(__filename);
 // Path to urls.json
 const filePath = path.join(__dirname, '../urls.json');
 
-export function findUrl(newUrl) {
+function findUrl(newUrl) {
   let urls = [];
 
   try {
@@ -22,3 +20,5 @@ export function findUrl(newUrl) {
 
   return newUrl;
 }
+
+module.exports = { findUrl };
