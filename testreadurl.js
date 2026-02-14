@@ -1,9 +1,10 @@
-// main.js
-import { findUrlById } from './urlmodels.js';
+const { findUrlById } = require('./urlmodels');
 
 const idToSearch = 'abc123';
 
-const url = await findUrlById(idToSearch);
+async function run() {
+  const url = await findUrlById(idToSearch);
+  console.log(url);
+}
 
-console.log(url);
-// Example output: { id: 'abc123', originalUrl: 'https://google.com' }
+run();

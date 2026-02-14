@@ -1,7 +1,6 @@
-// readUrl.js
-import { readFile } from 'fs/promises';
+const { readFile } = require('fs/promises');
 
-export async function findUrlById(id) {
+async function findUrlById(id) {
   try {
     // Read the urls.json file
     const data = await readFile('urls.json', 'utf8');
@@ -23,3 +22,5 @@ export async function findUrlById(id) {
     return null;
   }
 }
+
+module.exports = { findUrlById };
