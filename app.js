@@ -1,7 +1,7 @@
 const express = require('express');
 const { findUrl } = require('./models/urlModels');
 
-const { shortenUrl } = require('./controllers/urlController');
+const { shortenUrl } = require('./controllers/urlsControllers');
 
 
 const app = express();
