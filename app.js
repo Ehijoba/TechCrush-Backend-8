@@ -18,4 +18,4 @@ app.post('/shorten', (req, res) => {
   res.send(`Short URL code: ${saved.code}`);
 });
 
-app.listen(3000, () => console.log('Server running at http://localhost:3000'));a
+app.listen(3000, () => console.log('Server running at http://localhost:3000'));
